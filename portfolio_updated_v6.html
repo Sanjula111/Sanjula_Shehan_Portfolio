@@ -310,6 +310,13 @@
         text-transform: uppercase;
         transition: color 0.3s;
         position: relative;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-links a i {
+        font-size: 12px;
+        transition: color 0.3s, transform 0.3s;
       }
       .nav-links a::after {
         content: "";
@@ -323,6 +330,10 @@
       }
       .nav-links a:hover {
         color: var(--white);
+      }
+      .nav-links a:hover i {
+        color: var(--A);
+        transform: scale(1.15);
       }
       .nav-links a:hover::after {
         width: 100%;
@@ -622,6 +633,50 @@
         white-space: nowrap;
         box-shadow: 0 4px 20px rgba(0, 255, 136, 0.4);
         clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+        animation: badge-glow 2.4s ease-in-out infinite, badge-pulse 1.2s ease-in-out infinite;
+      }
+      /* Bullet point blinking animation */
+      .badge-dot {
+        display: inline-block;
+        animation: bullet-blink 1s cubic-bezier(0.4, 0, 0.6, 1) infinite, bullet-glow 1s ease-in-out infinite;
+      }
+      /* Glow effect animation */
+      @keyframes badge-glow {
+        0%, 100% {
+          box-shadow: 0 4px 20px rgba(0, 255, 136, 0.4);
+        }
+        50% {
+          box-shadow: 0 4px 40px rgba(0, 255, 136, 0.8), 0 0 60px rgba(0, 255, 136, 0.5);
+        }
+      }
+      /* Subtle pulse/breathing effect */
+      @keyframes badge-pulse {
+        0%, 100% {
+          transform: translateX(-50%) scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: translateX(-50%) scale(1.05);
+          opacity: 0.95;
+        }
+      }
+      /* Bullet blink animation */
+      @keyframes bullet-blink {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+      /* Bullet glow animation */
+      @keyframes bullet-glow {
+        0%, 100% {
+          text-shadow: 0 0 0px rgba(0, 0, 0, 0);
+        }
+        50% {
+          text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        }
       }
 
       .hero-sub {
@@ -2679,12 +2734,12 @@
         SS.DEV
       </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#showreel">Work</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="#showreel"><i class="fas fa-briefcase"></i> Work</a></li>
+        <li><a href="#projects"><i class="fas fa-folder"></i> Projects</a></li>
+        <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="#certifications"><i class="fas fa-award"></i> Certs</a></li>
       </ul>
       <div style="display: flex; align-items: center; gap: 12px">
         <button id="theme-toggle" title="Toggle theme">
@@ -2737,7 +2792,7 @@
             <div class="hp-corner hp-br"></div>
             <div class="hp-dot hp-dot-tl"></div>
             <div class="hp-dot hp-dot-bl"></div>
-            <div class="hero-photo-badge">● AVAILABLE FOR WORK</div>
+            <div class="hero-photo-badge"><span class="badge-dot">●</span> AVAILABLE FOR WORK</div>
           </div>
         </div>
         <div class="hero-sub">
