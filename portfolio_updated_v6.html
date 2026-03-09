@@ -798,18 +798,22 @@
       /* HERO STATS */
       .hero-stats {
         display: flex;
-        flex-direction: column;
-        gap: 2px;
+        flex-direction: row;
+        gap: 32px;
+        align-items: center;
+        flex-wrap: wrap;
       }
       .h-stat {
         display: flex;
-        align-items: baseline;
-        gap: 8px;
-        padding: 12px 0;
-        border-bottom: 1px solid var(--stroke);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 0 24px 0 0;
+        border-right: 1px solid var(--stroke);
       }
       .h-stat:last-child {
-        border-bottom: none;
+        border-right: none;
+        padding-right: 0;
       }
       .h-stat-n {
         font-family: var(--f-head);
