@@ -310,6 +310,13 @@
         text-transform: uppercase;
         transition: color 0.3s;
         position: relative;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+      .nav-links a i {
+        font-size: 12px;
+        transition: color 0.3s, transform 0.3s;
       }
       .nav-links a::after {
         content: "";
@@ -323,6 +330,10 @@
       }
       .nav-links a:hover {
         color: var(--white);
+      }
+      .nav-links a:hover i {
+        color: var(--A);
+        transform: scale(1.15);
       }
       .nav-links a:hover::after {
         width: 100%;
@@ -622,6 +633,50 @@
         white-space: nowrap;
         box-shadow: 0 4px 20px rgba(0, 255, 136, 0.4);
         clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+        animation: badge-glow 2.4s ease-in-out infinite, badge-pulse 1.2s ease-in-out infinite;
+      }
+      /* Bullet point blinking animation */
+      .badge-dot {
+        display: inline-block;
+        animation: bullet-blink 1s cubic-bezier(0.4, 0, 0.6, 1) infinite, bullet-glow 1s ease-in-out infinite;
+      }
+      /* Glow effect animation */
+      @keyframes badge-glow {
+        0%, 100% {
+          box-shadow: 0 4px 20px rgba(0, 255, 136, 0.4);
+        }
+        50% {
+          box-shadow: 0 4px 40px rgba(0, 255, 136, 0.8), 0 0 60px rgba(0, 255, 136, 0.5);
+        }
+      }
+      /* Subtle pulse/breathing effect */
+      @keyframes badge-pulse {
+        0%, 100% {
+          transform: translateX(-50%) scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: translateX(-50%) scale(1.05);
+          opacity: 0.95;
+        }
+      }
+      /* Bullet blink animation */
+      @keyframes bullet-blink {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+      /* Bullet glow animation */
+      @keyframes bullet-glow {
+        0%, 100% {
+          text-shadow: 0 0 0px rgba(0, 0, 0, 0);
+        }
+        50% {
+          text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        }
       }
 
       .hero-sub {
@@ -743,18 +798,22 @@
       /* HERO STATS */
       .hero-stats {
         display: flex;
-        flex-direction: column;
-        gap: 2px;
+        flex-direction: row;
+        gap: 32px;
+        align-items: center;
+        flex-wrap: wrap;
       }
       .h-stat {
         display: flex;
-        align-items: baseline;
-        gap: 8px;
-        padding: 12px 0;
-        border-bottom: 1px solid var(--stroke);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 0 24px 0 0;
+        border-right: 1px solid var(--stroke);
       }
       .h-stat:last-child {
-        border-bottom: none;
+        border-right: none;
+        padding-right: 0;
       }
       .h-stat-n {
         font-family: var(--f-head);
@@ -2679,12 +2738,12 @@
         SS.DEV
       </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#showreel">Work</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="#showreel"><i class="fas fa-briefcase"></i> Work</a></li>
+        <li><a href="#projects"><i class="fas fa-folder"></i> Projects</a></li>
+        <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="#certifications"><i class="fas fa-award"></i> Certs</a></li>
       </ul>
       <div style="display: flex; align-items: center; gap: 12px">
         <button id="theme-toggle" title="Toggle theme">
@@ -2737,7 +2796,7 @@
             <div class="hp-corner hp-br"></div>
             <div class="hp-dot hp-dot-tl"></div>
             <div class="hp-dot hp-dot-bl"></div>
-            <div class="hero-photo-badge">● AVAILABLE FOR WORK</div>
+            <div class="hero-photo-badge"><span class="badge-dot">●</span> AVAILABLE FOR WORK</div>
           </div>
         </div>
         <div class="hero-sub">
@@ -2859,9 +2918,7 @@
                 <span class="acp-str">"Full Stack + DevOps Engineer"</span>,
               </div>
               <div class="acp-line acp-indent">
-                <span class="acp-key">stack</span>: [<span class="acp-str"
-                  >"React"</span
-                >, <span class="acp-str">"Node"</span>,
+                <span class="acp-key">stack</span>: [<span class="acp-str">"MERN"</span>, <span class="acp-str">"DevOps"</span>,
                 <span class="acp-str">"Python"</span>],
               </div>
               <div class="acp-line acp-indent">
@@ -2871,6 +2928,30 @@
               <div class="acp-line acp-indent">
                 <span class="acp-key">gpa</span>:
                 <span class="acp-num">3.29</span>,
+              </div>
+              <div class="acp-line acp-indent">
+                <span class="acp-key">year</span>:
+                <span class="acp-str">"4th Year"</span>,
+              </div>
+              <div class="acp-line acp-indent">
+                <span class="acp-key">projects</span>:
+                <span class="acp-num">11</span>,
+              </div>
+              <div class="acp-line acp-indent">
+                <span class="acp-key">certifications</span>:
+                <span class="acp-num">14</span>,
+              </div>
+              <div class="acp-line acp-indent">
+                <span class="acp-key">cloud</span>: [<span class="acp-str">"AWS"</span>, <span class="acp-str">"Docker"</span>,
+                <span class="acp-str">"Kubernetes"</span>],
+              </div>
+              <div class="acp-line acp-indent">
+                <span class="acp-key">tools</span>: [<span class="acp-str">"Git"</span>, <span class="acp-str">"GitHub Actions"</span>,
+                <span class="acp-str">"Linux"</span>],
+              </div>
+              <div class="acp-line acp-indent">
+                <span class="acp-key">location</span>:
+                <span class="acp-str">"Sri Lanka"</span>,
               </div>
               <div class="acp-line acp-indent">
                 <span class="acp-key">status</span>:
@@ -3315,6 +3396,121 @@
             <div class="proj-tags">
               <span class="p-tag">PYTHON</span><span class="p-tag">FLASK</span
               ><span class="p-tag">SQLITE</span>
+            </div>
+            <a
+              href="https://github.com/Sanjula111"
+              target="_blank"
+              class="proj-arrow"
+              ><i class="fas fa-arrow-up-right-from-square"></i
+            ></a>
+            <div class="proj-card-line"></div>
+          </div>
+          <div class="proj-card" data-c="python">
+            <div class="proj-card-top">
+              <div class="proj-num">07</div>
+              <div class="proj-status status-done">✓ COMPLETE</div>
+            </div>
+            <span class="proj-icon">📥</span>
+            <div class="proj-name">YOUTUBE<br />DOWNLOADER</div>
+            <div class="proj-desc">
+              Download videos and playlists from YouTube with multiple quality
+              options and progress tracking.
+            </div>
+            <div class="proj-tags">
+              <span class="p-tag">PYTHON</span><span class="p-tag">PYTUBE</span
+              ><span class="p-tag">GUI</span>
+            </div>
+            <a
+              href="https://github.com/Sanjula111"
+              target="_blank"
+              class="proj-arrow"
+              ><i class="fas fa-arrow-up-right-from-square"></i
+            ></a>
+            <div class="proj-card-line"></div>
+          </div>
+          <div class="proj-card" data-c="python">
+            <div class="proj-card-top">
+              <div class="proj-num">08</div>
+              <div class="proj-status status-done">✓ COMPLETE</div>
+            </div>
+            <span class="proj-icon">🔐</span>
+            <div class="proj-name">PASSWORD<br />GENERATOR</div>
+            <div class="proj-desc">
+              Generate secure random passwords with customizable length, symbols,
+              and character combinations.
+            </div>
+            <div class="proj-tags">
+              <span class="p-tag">PYTHON</span><span class="p-tag">RANDOM</span
+              ><span class="p-tag">SECURITY</span>
+            </div>
+            <a
+              href="https://github.com/Sanjula111"
+              target="_blank"
+              class="proj-arrow"
+              ><i class="fas fa-arrow-up-right-from-square"></i
+            ></a>
+            <div class="proj-card-line"></div>
+          </div>
+          <div class="proj-card" data-c="python">
+            <div class="proj-card-top">
+              <div class="proj-num">09</div>
+              <div class="proj-status status-done">✓ COMPLETE</div>
+            </div>
+            <span class="proj-icon">⬛</span>
+            <div class="proj-name">QR CODE<br />GENERATOR</div>
+            <div class="proj-desc">
+              Generate QR codes from text or URLs with customizable size and
+              error correction levels.
+            </div>
+            <div class="proj-tags">
+              <span class="p-tag">PYTHON</span><span class="p-tag">QRCODE</span
+              ><span class="p-tag">PIL</span>
+            </div>
+            <a
+              href="https://github.com/Sanjula111"
+              target="_blank"
+              class="proj-arrow"
+              ><i class="fas fa-arrow-up-right-from-square"></i
+            ></a>
+            <div class="proj-card-line"></div>
+          </div>
+          <div class="proj-card" data-c="python">
+            <div class="proj-card-top">
+              <div class="proj-num">10</div>
+              <div class="proj-status status-done">✓ COMPLETE</div>
+            </div>
+            <span class="proj-icon">🎵</span>
+            <div class="proj-name">VIDEO TO AUDIO<br />CONVERTOR</div>
+            <div class="proj-desc">
+              Convert MP4 and other video formats to MP3 audio with batch
+              processing capability.
+            </div>
+            <div class="proj-tags">
+              <span class="p-tag">PYTHON</span><span class="p-tag">FFMPEG</span
+              ><span class="p-tag">MOVIEPY</span>
+            </div>
+            <a
+              href="https://github.com/Sanjula111"
+              target="_blank"
+              class="proj-arrow"
+              ><i class="fas fa-arrow-up-right-from-square"></i
+            ></a>
+            <div class="proj-card-line"></div>
+          </div>
+          <div class="proj-card" data-c="python">
+            <div class="proj-card-top">
+              <div class="proj-num">11</div>
+              <div class="proj-status status-done">✓ COMPLETE</div>
+            </div>
+            <span class="proj-icon">📚</span>
+            <div class="proj-name">ACADEMIC CITATION<br />GENERATOR</div>
+            <div class="proj-desc">
+              Generate citations in APA, MLA, and Chicago formats for academic
+              papers and research.
+            </div>
+            <div class="proj-tags">
+              <span class="p-tag">PYTHON</span><span class="p-tag">FORMATTING</span
+              ><span class="p-tag">AUTOMATION</span>
             </div>
             <a
               href="https://github.com/Sanjula111"
