@@ -316,7 +316,9 @@
       }
       .nav-links a i {
         font-size: 12px;
-        transition: color 0.3s, transform 0.3s;
+        transition:
+          color 0.3s,
+          transform 0.3s;
       }
       .nav-links a::after {
         content: "";
@@ -633,25 +635,33 @@
         white-space: nowrap;
         box-shadow: 0 4px 20px rgba(0, 255, 136, 0.4);
         clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
-        animation: badge-glow 2.4s ease-in-out infinite, badge-pulse 1.2s ease-in-out infinite;
+        animation:
+          badge-glow 2.4s ease-in-out infinite,
+          badge-pulse 1.2s ease-in-out infinite;
       }
       /* Bullet point blinking animation */
       .badge-dot {
         display: inline-block;
-        animation: bullet-blink 1s cubic-bezier(0.4, 0, 0.6, 1) infinite, bullet-glow 1s ease-in-out infinite;
+        animation:
+          bullet-blink 1s cubic-bezier(0.4, 0, 0.6, 1) infinite,
+          bullet-glow 1s ease-in-out infinite;
       }
       /* Glow effect animation */
       @keyframes badge-glow {
-        0%, 100% {
+        0%,
+        100% {
           box-shadow: 0 4px 20px rgba(0, 255, 136, 0.4);
         }
         50% {
-          box-shadow: 0 4px 40px rgba(0, 255, 136, 0.8), 0 0 60px rgba(0, 255, 136, 0.5);
+          box-shadow:
+            0 4px 40px rgba(0, 255, 136, 0.8),
+            0 0 60px rgba(0, 255, 136, 0.5);
         }
       }
       /* Subtle pulse/breathing effect */
       @keyframes badge-pulse {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateX(-50%) scale(1);
           opacity: 1;
         }
@@ -662,7 +672,8 @@
       }
       /* Bullet blink animation */
       @keyframes bullet-blink {
-        0%, 100% {
+        0%,
+        100% {
           opacity: 1;
         }
         50% {
@@ -671,7 +682,8 @@
       }
       /* Bullet glow animation */
       @keyframes bullet-glow {
-        0%, 100% {
+        0%,
+        100% {
           text-shadow: 0 0 0px rgba(0, 0, 0, 0);
         }
         50% {
@@ -1373,7 +1385,9 @@
         align-items: center;
         gap: 8px;
       }
-      .sr-hint i { color: var(--A); }
+      .sr-hint i {
+        color: var(--A);
+      }
 
       /* ── NEW GRID ── */
       .sr-grid {
@@ -1413,9 +1427,14 @@
         overflow: hidden;
         border: 1px solid var(--stroke2);
         background: var(--paper);
-        transition: border-color 0.4s, transform 0.4s;
+        transition:
+          border-color 0.4s,
+          transform 0.4s;
       }
-      .sr-card:hover { border-color: rgba(0,240,255,0.35); transform: translateY(-4px); }
+      .sr-card:hover {
+        border-color: rgba(0, 240, 255, 0.35);
+        transform: translateY(-4px);
+      }
       .sr-card-canvas {
         display: block;
         width: 100%;
@@ -1426,7 +1445,11 @@
       .sr-card-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(6,12,24,0.92) 0%, transparent 55%);
+        background: linear-gradient(
+          to top,
+          rgba(6, 12, 24, 0.92) 0%,
+          transparent 55%
+        );
         z-index: 2;
       }
       .sr-card-content {
@@ -1449,7 +1472,8 @@
         margin-bottom: 10px;
       }
       .sr-chip-dot {
-        width: 6px; height: 6px;
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
         animation: pulse 2s infinite;
       }
@@ -1481,7 +1505,9 @@
         opacity: 0.85;
         transition: opacity 0.2s;
       }
-      .sr-tag:hover { opacity: 1; }
+      .sr-tag:hover {
+        opacity: 1;
+      }
 
       /* ── TECH STACK CARD ── */
       .sr-stack-card {
@@ -1497,7 +1523,9 @@
         overflow: hidden;
         transition: border-color 0.3s;
       }
-      .sr-stack-card:hover { border-color: var(--stroke2); }
+      .sr-stack-card:hover {
+        border-color: var(--stroke2);
+      }
       .sr-stack-label {
         font-family: var(--f-code);
         font-size: 10px;
@@ -1505,7 +1533,11 @@
         color: var(--A);
         text-transform: uppercase;
       }
-      .sr-stack-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+      .sr-stack-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
       .sr-stack-chip {
         font-family: var(--f-code);
         font-size: 11px;
@@ -1519,15 +1551,19 @@
         overflow: hidden;
       }
       .sr-stack-chip::before {
-        content: '';
+        content: "";
         position: absolute;
-        bottom: 0; left: 0; right: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         height: 1px;
         transform: scaleX(0);
         transition: transform 0.3s;
         transform-origin: left;
       }
-      .sr-stack-chip:hover::before { transform: scaleX(1); }
+      .sr-stack-chip:hover::before {
+        transform: scaleX(1);
+      }
 
       /* availability */
       .sr-avail-card {
@@ -1540,7 +1576,9 @@
         flex: 0 0 auto;
         transition: border-color 0.3s;
       }
-      .sr-avail-card:hover { border-color: rgba(0,255,136,0.3); }
+      .sr-avail-card:hover {
+        border-color: rgba(0, 255, 136, 0.3);
+      }
       .sr-avail-label {
         font-family: var(--f-code);
         font-size: 10px;
@@ -1558,7 +1596,8 @@
         letter-spacing: 1px;
       }
       .sr-avail-dot {
-        width: 10px; height: 10px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         background: var(--E);
         box-shadow: 0 0 10px var(--E);
@@ -1582,7 +1621,9 @@
         gap: 4px;
         transition: background 0.3s;
       }
-      .sr-counter-cell:hover { background: var(--glass2); }
+      .sr-counter-cell:hover {
+        background: var(--glass2);
+      }
       .sr-counter-num {
         font-family: var(--f-head);
         font-size: 42px;
@@ -2753,12 +2794,26 @@
         SS
       </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
-        <li><a href="#showreel"><i class="fas fa-briefcase"></i> Work</a></li>
-        <li><a href="#projects"><i class="fas fa-folder"></i> Projects</a></li>
-        <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-        <li><a href="#certifications"><i class="fas fa-award"></i> Certs</a></li>
+        <li>
+          <a href="#about"><i class="fas fa-user"></i> About</a>
+        </li>
+        <li>
+          <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+        </li>
+        <li>
+          <a href="#showreel"><i class="fas fa-briefcase"></i> Work</a>
+        </li>
+        <li>
+          <a href="#projects"><i class="fas fa-folder"></i> Projects</a>
+        </li>
+        <li>
+          <a href="#education"
+            ><i class="fas fa-graduation-cap"></i> Education</a
+          >
+        </li>
+        <li>
+          <a href="#certifications"><i class="fas fa-award"></i> Certs</a>
+        </li>
       </ul>
       <div style="display: flex; align-items: center; gap: 12px">
         <button id="theme-toggle" title="Toggle theme">
@@ -2788,7 +2843,7 @@
           <div class="hero-photo-wrap">
             <div class="hero-photo-frame">
               <img
-                src="D:\Academic\My_Projects\Portfolio\Edit html\profile.jpeg"
+                src="D:\Academic\My_Projects\Sanjula_Shehan_Portfolio\profile.jpeg"
                 alt="Sanjula Shehan"
                 class="hero-photo-img"
                 onerror="
@@ -2811,7 +2866,9 @@
             <div class="hp-corner hp-br"></div>
             <div class="hp-dot hp-dot-tl"></div>
             <div class="hp-dot hp-dot-bl"></div>
-            <div class="hero-photo-badge"><span class="badge-dot">●</span> AVAILABLE FOR WORK</div>
+            <div class="hero-photo-badge">
+              <span class="badge-dot">●</span> AVAILABLE FOR WORK
+            </div>
           </div>
         </div>
         <div class="hero-sub">
@@ -2831,9 +2888,14 @@
               <a href="#contact" class="cta-secondary"
                 ><i class="fas fa-envelope"></i> GET IN TOUCH</a
               >
-              <a href="resume.pdf" download class="cta-resume"
-                ><i class="fas fa-download"></i> RESUME</a
+              <a
+                href="https://drive.google.com/file/d/125iDjajwKOJx_fh2Dtz0TCT--8zAuKyo/view?usp=sharing"
+                target="_blank"
+                rel="noopener"
+                class="cta-resume"
               >
+                <i class="fas fa-download"></i> RESUME
+              </a>
             </div>
           </div>
           <div class="hero-stats">
@@ -2933,7 +2995,9 @@
                 <span class="acp-str">"Full Stack + DevOps Engineer"</span>,
               </div>
               <div class="acp-line acp-indent">
-                <span class="acp-key">stack</span>: [<span class="acp-str">"MERN"</span>, <span class="acp-str">"DevOps"</span>,
+                <span class="acp-key">stack</span>: [<span class="acp-str"
+                  >"MERN"</span
+                >, <span class="acp-str">"DevOps"</span>,
                 <span class="acp-str">"Python"</span>],
               </div>
               <div class="acp-line acp-indent">
@@ -2957,15 +3021,23 @@
                 <span class="acp-num">14</span>,
               </div>
               <div class="acp-line acp-indent">
-                <span class="acp-key">cloud</span>: [<span class="acp-str">"AWS"</span>, <span class="acp-str">"Docker"</span>,
-                <span class="acp-str">"Kubernetes"</span>],
+                <span class="acp-key">cloud</span>: [<span class="acp-str"
+                  >"AWS"</span
+                >, <span class="acp-str">"Docker"</span>,
+                <span class="acp-str">"Kubernetes"</span>,<span class="acp-str"
+                  >"CI/CD pipelines"</span
+                >],
               </div>
               <div class="acp-line acp-indent">
-                <span class="acp-key">tools</span>: [<span class="acp-str">"Git"</span>, <span class="acp-str">"GitHub Actions"</span>,
+                <span class="acp-key">tools</span>: [<span class="acp-str"
+                  >"Git"</span
+                >, <span class="acp-str">"GitHub Actions"</span>,
                 <span class="acp-str">"Linux"</span>],
               </div>
               <div class="acp-line acp-indent">
-                <span class="acp-key">management</span>: [<span class="acp-str">"Jira"</span>, <span class="acp-str">"Confluence"</span>,
+                <span class="acp-key">management</span>: [<span class="acp-str"
+                  >"Jira"</span
+                >, <span class="acp-str">"Confluence"</span>,
                 <span class="acp-str">"Agile/Scrum"</span>],
               </div>
               <div class="acp-line acp-indent">
@@ -2973,20 +3045,20 @@
                 <span class="acp-str">"Sri Lanka"</span>,
               </div>
               <div class="acp-line acp-indent">
-                <span class="acp-key">Languages</span>: [<span class="acp-str">"Sinhala(Native)"</span>, <span class="acp-str">"English(Professional)"</span>,
-                <span class="acp-str">"Tamil(Basic)"</span>],<span class="acp-str">"German(Basic)"</span>],
-              </div>
-              <div class="acp-line acp-indent">
-                <span class="acp-key">status</span>:
-                <span class="acp-str acp-green">"Open to Work ✓"</span>,
+                <span class="acp-key">Languages</span>: [<span class="acp-str"
+                  >"Sinhala"</span
+                >, <span class="acp-str">"English"</span>,
+                <span class="acp-str">"Tamil"</span>],<span class="acp-str"
+                  >"German"</span
+                >],
               </div>
               <div class="acp-line acp-indent">
                 <span class="acp-key">passion</span>:
                 <span class="acp-str">"Building AI solutions"</span>,
               </div>
               <div class="acp-line acp-indent">
-                <span class="acp-key">languages</span>: [<span class="acp-str">"Sinhala"</span>, <span class="acp-str">"English"</span>,
-                <span class="acp-str">"Tamil"</span>, <span class="acp-str">"German"</span>]
+                <span class="acp-key">status</span>:
+                <span class="acp-str acp-green">"Open to Work ✓"</span>,
               </div>
               <div class="acp-line">};</div>
               <div class="acp-line acp-dim">
@@ -3080,7 +3152,7 @@
               </svg>
               <div class="sk-arc-pct" style="color: #47a248">80%</div>
             </div>
-          </div>          
+          </div>
           <div class="sk-card">
             <div class="sk-card-num">04</div>
             <span class="sk-icon">🟢</span>
@@ -3174,7 +3246,8 @@
             <span class="sk-icon">📱</span>
             <div class="sk-name">Flutter</div>
             <div class="sk-desc">
-              Cross-platform framework for building fast, beautiful mobile and web applications from a single codebase. 📱✨
+              Cross-platform framework for building fast, beautiful mobile and
+              web applications from a single codebase. 📱✨
             </div>
             <div class="sk-arc">
               <svg width="56" height="56" viewBox="0 0 56 56">
@@ -3216,41 +3289,80 @@
           </div>
         </div>
         <div class="sr-grid reveal">
-
           <!-- ── BIG LEFT CARD: MERN animated network canvas ── -->
-          <div class="sr-card" style="min-height:480px;">
+          <div class="sr-card" style="min-height: 480px">
             <canvas id="sr-canvas-mern" class="sr-card-canvas"></canvas>
             <div class="sr-card-overlay"></div>
             <div class="sr-card-content">
-              <div class="sr-chip" style="color:var(--A);">
-                <span class="sr-chip-dot" style="background:var(--A);box-shadow:0 0 8px var(--A);"></span>
+              <div class="sr-chip" style="color: var(--A)">
+                <span
+                  class="sr-chip-dot"
+                  style="background: var(--A); box-shadow: 0 0 8px var(--A)"
+                ></span>
                 FULL STACK DEVELOPMENT
               </div>
               <div class="sr-title">WEB DEVELOPMENT</div>
-              <div class="sr-desc">MERN stack apps, REST APIs &amp; responsive interfaces built with React, Node.js &amp; MongoDB.</div>
+              <div class="sr-desc">
+                MERN stack apps, REST APIs &amp; responsive interfaces built
+                with React, Node.js &amp; MongoDB.
+              </div>
               <div class="sr-tags">
-                <span class="sr-tag" style="color:var(--A);border-color:rgba(0,240,255,0.25);">REACT</span>
-                <span class="sr-tag" style="color:var(--E);border-color:rgba(0,255,136,0.25);">NODE.JS</span>
-                <span class="sr-tag" style="color:#47a248;border-color:rgba(71,162,72,0.25);">MONGODB</span>
-                <span class="sr-tag" style="color:var(--B);border-color:rgba(255,45,120,0.25);">EXPRESS</span>
+                <span
+                  class="sr-tag"
+                  style="color: var(--A); border-color: rgba(0, 240, 255, 0.25)"
+                  >REACT</span
+                >
+                <span
+                  class="sr-tag"
+                  style="color: var(--E); border-color: rgba(0, 255, 136, 0.25)"
+                  >NODE.JS</span
+                >
+                <span
+                  class="sr-tag"
+                  style="color: #47a248; border-color: rgba(71, 162, 72, 0.25)"
+                  >MONGODB</span
+                >
+                <span
+                  class="sr-tag"
+                  style="
+                    color: var(--B);
+                    border-color: rgba(255, 45, 120, 0.25);
+                  "
+                  >EXPRESS</span
+                >
               </div>
             </div>
           </div>
 
           <!-- ── RIGHT SIDE: two stacked cards ── -->
           <div class="sr-side">
-
             <!-- AI canvas card -->
-            <div class="sr-card" style="flex:1;min-height:200px;">
+            <div class="sr-card" style="flex: 1; min-height: 200px">
               <canvas id="sr-canvas-ai" class="sr-card-canvas"></canvas>
-              <div class="sr-card-overlay" style="background:linear-gradient(to top,rgba(6,12,24,0.94) 0%,transparent 60%);"></div>
-              <div class="sr-card-content" style="padding:24px;">
-                <div class="sr-chip" style="color:var(--B);">
-                  <span class="sr-chip-dot" style="background:var(--B);box-shadow:0 0 8px var(--B);"></span>
+              <div
+                class="sr-card-overlay"
+                style="
+                  background: linear-gradient(
+                    to top,
+                    rgba(6, 12, 24, 0.94) 0%,
+                    transparent 60%
+                  );
+                "
+              ></div>
+              <div class="sr-card-content" style="padding: 24px">
+                <div class="sr-chip" style="color: var(--B)">
+                  <span
+                    class="sr-chip-dot"
+                    style="background: var(--B); box-shadow: 0 0 8px var(--B)"
+                  ></span>
                   AI &amp; MACHINE LEARNING
                 </div>
-                <div class="sr-title" style="font-size:22px;">AI PROJECTS REEL</div>
-                <div class="sr-desc" style="margin-bottom:0;">YOLOv8, OpenCV, Scikit-learn &amp; NLP.</div>
+                <div class="sr-title" style="font-size: 22px">
+                  AI PROJECTS REEL
+                </div>
+                <div class="sr-desc" style="margin-bottom: 0">
+                  YOLOv8, OpenCV, Scikit-learn &amp; NLP.
+                </div>
               </div>
             </div>
 
@@ -3258,16 +3370,62 @@
             <div class="sr-stack-card">
               <div class="sr-stack-label">// Tech Stack</div>
               <div class="sr-stack-chips" id="sr-stack-chips">
-                <span class="sr-stack-chip" style="color:var(--E);border-color:rgba(0,255,136,0.25);">REACT</span>
-                <span class="sr-stack-chip" style="color:var(--A);border-color:rgba(0,240,255,0.25);">NODE.JS</span>
-                <span class="sr-stack-chip" style="color:#47a248;border-color:rgba(71,162,72,0.25);">MONGODB</span>
-                <span class="sr-stack-chip" style="color:#4b9cd3;border-color:rgba(75,156,211,0.25);">PYTHON</span>
-                <span class="sr-stack-chip" style="color:var(--D);border-color:rgba(123,47,255,0.25);">AI/ML</span>
-                <span class="sr-stack-chip" style="color:#2496ed;border-color:rgba(36,150,237,0.25);">DOCKER</span>
-                <span class="sr-stack-chip" style="color:var(--B);border-color:rgba(255,45,120,0.25);">OPENCV</span>
-                <span class="sr-stack-chip" style="color:var(--C);border-color:rgba(255,230,0,0.25);">YOLOV8</span>
+                <span
+                  class="sr-stack-chip"
+                  style="color: var(--E); border-color: rgba(0, 255, 136, 0.25)"
+                  >REACT</span
+                >
+                <span
+                  class="sr-stack-chip"
+                  style="color: var(--A); border-color: rgba(0, 240, 255, 0.25)"
+                  >NODE.JS</span
+                >
+                <span
+                  class="sr-stack-chip"
+                  style="color: #47a248; border-color: rgba(71, 162, 72, 0.25)"
+                  >MONGODB</span
+                >
+                <span
+                  class="sr-stack-chip"
+                  style="color: #4b9cd3; border-color: rgba(75, 156, 211, 0.25)"
+                  >PYTHON</span
+                >
+                <span
+                  class="sr-stack-chip"
+                  style="
+                    color: var(--D);
+                    border-color: rgba(123, 47, 255, 0.25);
+                  "
+                  >AI/ML</span
+                >
+                <span
+                  class="sr-stack-chip"
+                  style="color: #2496ed; border-color: rgba(36, 150, 237, 0.25)"
+                  >DOCKER</span
+                >
+                <span
+                  class="sr-stack-chip"
+                  style="
+                    color: var(--B);
+                    border-color: rgba(255, 45, 120, 0.25);
+                  "
+                  >OPENCV</span
+                >
+                <span
+                  class="sr-stack-chip"
+                  style="color: var(--C); border-color: rgba(255, 230, 0, 0.25)"
+                  >YOLOV8</span
+                >
               </div>
-              <div class="sr-avail-card" style="background:transparent;border:none;padding:0;gap:6px;">
+              <div
+                class="sr-avail-card"
+                style="
+                  background: transparent;
+                  border: none;
+                  padding: 0;
+                  gap: 6px;
+                "
+              >
                 <div class="sr-avail-label">AVAILABILITY</div>
                 <div class="sr-avail-status">
                   <span class="sr-avail-dot"></span>
@@ -3275,7 +3433,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -3294,7 +3451,6 @@
             <div class="sr-counter-lbl">Technologies</div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -3485,8 +3641,8 @@
             <span class="proj-icon">🔐</span>
             <div class="proj-name">PASSWORD<br />GENERATOR</div>
             <div class="proj-desc">
-              Generate secure random passwords with customizable length, symbols,
-              and character combinations.
+              Generate secure random passwords with customizable length,
+              symbols, and character combinations.
             </div>
             <div class="proj-tags">
               <span class="p-tag">PYTHON</span><span class="p-tag">RANDOM</span
@@ -3558,7 +3714,8 @@
               papers and research.
             </div>
             <div class="proj-tags">
-              <span class="p-tag">PYTHON</span><span class="p-tag">FORMATTING</span
+              <span class="p-tag">PYTHON</span
+              ><span class="p-tag">FORMATTING</span
               ><span class="p-tag">AUTOMATION</span>
             </div>
             <a
@@ -3995,7 +4152,9 @@
               <div>
                 <div class="c-info-label">Email</div>
                 <div class="c-info-val">
-                  <a href="mailto:sanjulashehanekanayaka@gmail.com">sanjulashehanekanayaka@gmail.com</a>
+                  <a href="mailto:sanjulashehanekanayaka@gmail.com"
+                    >sanjulashehanekanayaka@gmail.com</a
+                  >
                 </div>
               </div>
             </div>
@@ -4111,7 +4270,11 @@
       <i class="fas fa-check"></i>&nbsp;&nbsp;MESSAGE SENT SUCCESSFULLY
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script>
       /* ══════════════════ LOADER */
       (function () {
         var fill = document.getElementById("ldr-fill");
@@ -4448,59 +4611,80 @@
         });
 
       /* ══════════════════ PROJ CARD TRANSITIONS */
-      document.querySelectorAll(".proj-card").forEach(function(card){card.addEventListener("mouseenter",function(){this.querySelector(".proj-card-line")&&(this.querySelector(".proj-card-line").style.width="100%")});card.addEventListener("mouseleave",function(){this.querySelector(".proj-card-line")&&(this.querySelector(".proj-card-line").style.width="0")})});
+      document.querySelectorAll(".proj-card").forEach(function (card) {
+        card.addEventListener("mouseenter", function () {
+          this.querySelector(".proj-card-line") &&
+            (this.querySelector(".proj-card-line").style.width = "100%");
+        });
+        card.addEventListener("mouseleave", function () {
+          this.querySelector(".proj-card-line") &&
+            (this.querySelector(".proj-card-line").style.width = "0");
+        });
+      });
 
       /* ══════════════════ SHOWREEL CANVAS — MERN (network graph) */
-      (function(){
-        var cv = document.getElementById('sr-canvas-mern');
-        if(!cv) return;
-        var ctx = cv.getContext('2d');
+      (function () {
+        var cv = document.getElementById("sr-canvas-mern");
+        if (!cv) return;
+        var ctx = cv.getContext("2d");
         var nodes = [];
         var N = 28;
-        function resize(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;}
+        function resize() {
+          cv.width = cv.offsetWidth;
+          cv.height = cv.offsetHeight;
+        }
         resize();
-        window.addEventListener('resize',function(){resize();nodes=[];init();});
-        function init(){
-          for(var i=0;i<N;i++){
+        window.addEventListener("resize", function () {
+          resize();
+          nodes = [];
+          init();
+        });
+        function init() {
+          for (var i = 0; i < N; i++) {
             nodes.push({
-              x: Math.random()*cv.width, y: Math.random()*cv.height,
-              vx:(Math.random()-0.5)*0.5, vy:(Math.random()-0.5)*0.5,
-              r: Math.random()*2.5+1,
-              hue: [180,200,260,120][Math.floor(Math.random()*4)]
+              x: Math.random() * cv.width,
+              y: Math.random() * cv.height,
+              vx: (Math.random() - 0.5) * 0.5,
+              vy: (Math.random() - 0.5) * 0.5,
+              r: Math.random() * 2.5 + 1,
+              hue: [180, 200, 260, 120][Math.floor(Math.random() * 4)],
             });
           }
         }
         init();
-        function draw(){
-          ctx.clearRect(0,0,cv.width,cv.height);
+        function draw() {
+          ctx.clearRect(0, 0, cv.width, cv.height);
           // connections
-          for(var i=0;i<nodes.length;i++){
-            for(var j=i+1;j<nodes.length;j++){
-              var dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
-              var d=Math.sqrt(dx*dx+dy*dy);
-              if(d<120){
+          for (var i = 0; i < nodes.length; i++) {
+            for (var j = i + 1; j < nodes.length; j++) {
+              var dx = nodes[i].x - nodes[j].x,
+                dy = nodes[i].y - nodes[j].y;
+              var d = Math.sqrt(dx * dx + dy * dy);
+              if (d < 120) {
                 ctx.beginPath();
-                ctx.moveTo(nodes[i].x,nodes[i].y);
-                ctx.lineTo(nodes[j].x,nodes[j].y);
-                ctx.strokeStyle='rgba(0,240,255,'+(1-d/120)*0.12+')';
-                ctx.lineWidth=0.8;
+                ctx.moveTo(nodes[i].x, nodes[i].y);
+                ctx.lineTo(nodes[j].x, nodes[j].y);
+                ctx.strokeStyle =
+                  "rgba(0,240,255," + (1 - d / 120) * 0.12 + ")";
+                ctx.lineWidth = 0.8;
                 ctx.stroke();
               }
             }
           }
           // nodes
-          nodes.forEach(function(n){
-            n.x+=n.vx; n.y+=n.vy;
-            if(n.x<0||n.x>cv.width) n.vx*=-1;
-            if(n.y<0||n.y>cv.height) n.vy*=-1;
+          nodes.forEach(function (n) {
+            n.x += n.vx;
+            n.y += n.vy;
+            if (n.x < 0 || n.x > cv.width) n.vx *= -1;
+            if (n.y < 0 || n.y > cv.height) n.vy *= -1;
             ctx.beginPath();
-            ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
-            ctx.fillStyle='hsla('+n.hue+',100%,70%,0.7)';
+            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+            ctx.fillStyle = "hsla(" + n.hue + ",100%,70%,0.7)";
             ctx.fill();
             // glow
             ctx.beginPath();
-            ctx.arc(n.x,n.y,n.r*3,0,Math.PI*2);
-            ctx.fillStyle='hsla('+n.hue+',100%,70%,0.05)';
+            ctx.arc(n.x, n.y, n.r * 3, 0, Math.PI * 2);
+            ctx.fillStyle = "hsla(" + n.hue + ",100%,70%,0.05)";
             ctx.fill();
           });
           requestAnimationFrame(draw);
@@ -4509,57 +4693,62 @@
       })();
 
       /* ══════════════════ SHOWREEL CANVAS — AI (neural net layers) */
-      (function(){
-        var cv = document.getElementById('sr-canvas-ai');
-        if(!cv) return;
-        var ctx = cv.getContext('2d');
-        function resize(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;}
+      (function () {
+        var cv = document.getElementById("sr-canvas-ai");
+        if (!cv) return;
+        var ctx = cv.getContext("2d");
+        function resize() {
+          cv.width = cv.offsetWidth;
+          cv.height = cv.offsetHeight;
+        }
         resize();
-        window.addEventListener('resize',resize);
-        var t=0;
-        var layers=[4,6,6,4,2];
-        function draw(){
-          ctx.clearRect(0,0,cv.width,cv.height);
-          t+=0.012;
-          var W=cv.width, H=cv.height;
-          var xGap=W/(layers.length+1);
-          var pts=[];
-          layers.forEach(function(cnt,li){
-            var col=[];
-            var yGap=H/(cnt+1);
-            for(var ni=0;ni<cnt;ni++){
-              var x=xGap*(li+1), y=yGap*(ni+1);
-              var pulse=Math.sin(t+li*0.7+ni*0.4);
-              col.push({x:x,y:y,p:pulse});
+        window.addEventListener("resize", resize);
+        var t = 0;
+        var layers = [4, 6, 6, 4, 2];
+        function draw() {
+          ctx.clearRect(0, 0, cv.width, cv.height);
+          t += 0.012;
+          var W = cv.width,
+            H = cv.height;
+          var xGap = W / (layers.length + 1);
+          var pts = [];
+          layers.forEach(function (cnt, li) {
+            var col = [];
+            var yGap = H / (cnt + 1);
+            for (var ni = 0; ni < cnt; ni++) {
+              var x = xGap * (li + 1),
+                y = yGap * (ni + 1);
+              var pulse = Math.sin(t + li * 0.7 + ni * 0.4);
+              col.push({ x: x, y: y, p: pulse });
             }
             pts.push(col);
           });
           // draw connections
-          for(var li=0;li<pts.length-1;li++){
-            pts[li].forEach(function(a){
-              pts[li+1].forEach(function(b){
-                var alpha=(Math.sin(t+a.p+b.p)*0.5+0.5)*0.18+0.04;
+          for (var li = 0; li < pts.length - 1; li++) {
+            pts[li].forEach(function (a) {
+              pts[li + 1].forEach(function (b) {
+                var alpha = (Math.sin(t + a.p + b.p) * 0.5 + 0.5) * 0.18 + 0.04;
                 ctx.beginPath();
-                ctx.moveTo(a.x,a.y);
-                ctx.lineTo(b.x,b.y);
-                ctx.strokeStyle='rgba(255,45,120,'+alpha+')';
-                ctx.lineWidth=0.6;
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(b.x, b.y);
+                ctx.strokeStyle = "rgba(255,45,120," + alpha + ")";
+                ctx.lineWidth = 0.6;
                 ctx.stroke();
               });
             });
           }
           // draw nodes
-          pts.forEach(function(col,li){
-            col.forEach(function(n){
-              var glow=(n.p*0.5+0.5)*6+3;
-              var alpha=(n.p*0.5+0.5)*0.7+0.3;
+          pts.forEach(function (col, li) {
+            col.forEach(function (n) {
+              var glow = (n.p * 0.5 + 0.5) * 6 + 3;
+              var alpha = (n.p * 0.5 + 0.5) * 0.7 + 0.3;
               ctx.beginPath();
-              ctx.arc(n.x,n.y,3,0,Math.PI*2);
-              ctx.fillStyle='rgba(255,45,120,'+alpha+')';
-              ctx.shadowColor='rgba(255,45,120,0.8)';
-              ctx.shadowBlur=glow;
+              ctx.arc(n.x, n.y, 3, 0, Math.PI * 2);
+              ctx.fillStyle = "rgba(255,45,120," + alpha + ")";
+              ctx.shadowColor = "rgba(255,45,120,0.8)";
+              ctx.shadowBlur = glow;
               ctx.fill();
-              ctx.shadowBlur=0;
+              ctx.shadowBlur = 0;
             });
           });
           requestAnimationFrame(draw);
@@ -4568,51 +4757,56 @@
       })();
 
       /* ══════════════════ SHOWREEL COUNTER ANIMATION */
-      (function(){
-        var targets={
-          'cnt-projects':10,
-          'cnt-certs':12,
-          'cnt-tech':20
+      (function () {
+        var targets = {
+          "cnt-projects": 10,
+          "cnt-certs": 12,
+          "cnt-tech": 20,
         };
-        var triggered=false;
-        var counterSection=document.querySelector('.sr-counter-row');
-        if(!counterSection) return;
-        var cntObs=new IntersectionObserver(function(entries){
-          entries.forEach(function(en){
-            if(en.isIntersecting && !triggered){
-              triggered=true;
-              Object.keys(targets).forEach(function(id){
-                var el=document.getElementById(id);
-                if(!el) return;
-                var target=targets[id];
-                var start=0;
-                var step=Math.ceil(target/40);
-                var iv=setInterval(function(){
-                  start+=step;
-                  if(start>=target){start=target;clearInterval(iv);}
-                  el.textContent=start+'+';
-                },40);
-              });
-            }
-          });
-        },{threshold:0.3});
+        var triggered = false;
+        var counterSection = document.querySelector(".sr-counter-row");
+        if (!counterSection) return;
+        var cntObs = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (en) {
+              if (en.isIntersecting && !triggered) {
+                triggered = true;
+                Object.keys(targets).forEach(function (id) {
+                  var el = document.getElementById(id);
+                  if (!el) return;
+                  var target = targets[id];
+                  var start = 0;
+                  var step = Math.ceil(target / 40);
+                  var iv = setInterval(function () {
+                    start += step;
+                    if (start >= target) {
+                      start = target;
+                      clearInterval(iv);
+                    }
+                    el.textContent = start + "+";
+                  }, 40);
+                });
+              }
+            });
+          },
+          { threshold: 0.3 },
+        );
         cntObs.observe(counterSection);
       })();
 
       /* ══════════════════ STACK CHIP HOVER WAVE */
-      (function(){
-        var chips=document.querySelectorAll('#sr-stack-chips .sr-stack-chip');
-        chips.forEach(function(chip,i){
-          chip.style.animationDelay=(i*0.08)+'s';
-          chip.addEventListener('mouseenter',function(){
-            this.style.transform='translateY(-3px) scale(1.05)';
+      (function () {
+        var chips = document.querySelectorAll("#sr-stack-chips .sr-stack-chip");
+        chips.forEach(function (chip, i) {
+          chip.style.animationDelay = i * 0.08 + "s";
+          chip.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-3px) scale(1.05)";
           });
-          chip.addEventListener('mouseleave',function(){
-            this.style.transform='';
+          chip.addEventListener("mouseleave", function () {
+            this.style.transform = "";
           });
         });
       })();
-
     </script>
   </body>
 </html>
